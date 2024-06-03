@@ -1,0 +1,55 @@
+export const Step = ({children, text}) => {
+    return <span style={{
+        backgroundColor: '#822',
+        color: '#faa',
+        border: '1px ' + '#faa' + ' solid',
+        borderRadius: '5rem',
+        padding: '.2rem .4rem',
+        fontSize: '.6rem'
+    }}>
+        {text}
+    </span>
+}
+
+export const Highlight = ({children}) => {
+    return <span style={{
+        color: '#faa',
+    }}>
+        {children}
+    </span>
+}
+
+export function UE({children, version}) {
+    const colorLight = '#ffffff';
+    const colorDark = '#414141';
+    return <span style={{
+        backgroundColor: colorDark,
+        color: colorLight,
+        border: '1px ' + colorLight + ' solid',
+        borderRadius: '5px',
+        padding: '.05rem .4rem',
+        fontSize: '.75rem'
+    }}>
+        {version}
+    </span>
+}
+
+export function GetRoadmapStatus(children, text, colorLight, colorDark) {
+    return <div style={{
+        backgroundColor: colorDark,
+        color: colorLight,
+        border: '1px ' + colorLight + ' solid',
+        borderRadius: '5px',
+        padding: '.1rem .4rem',
+    }}>
+        {text}
+    </div>
+}
+
+export const Released = ({children}) => (GetRoadmapStatus(children, 'Released', "#afa", "#181"));
+
+export const InProgress = ({children}) => (GetRoadmapStatus(children, 'In Progress', "#ffa", "#882"));
+
+export const Planned = ({children}) => (GetRoadmapStatus(children, 'Planned', "#aff", "#288"));
+
+export const Researching = ({children}) => (GetRoadmapStatus(children, 'Researching', "#faa", "#822"));
