@@ -1,0 +1,36 @@
+---
+sidebar_position: 2
+title: Utility
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Split Stack
+
+`Split Stack` splits this item stack into two stacks with one of them containing
+the specified amount of items and the second one with the rest of them.
+This will update this item and also create a new one and automatically pick it up.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+splits the item.
+* `Stack` <Step text="2"/> : Amount of items to have in a new stack.
+Cannot be less than this item has items in its stack.
+
+![Split Stack](_static/img/utility/split-stack.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Set Item Simulation State
+
+`Set Item Simulation State` Sets this item's visibility and state of
+simulating physics. State of simulating physics will be changed only if the
+set root component is a subclass of primitive component. Collisions will be
+disabled while the item is invisible and re-enabled when
+turned back on to be visible.
+* `Visible` <Step text="1"/> : If true item will become visible.
+* `Simulate Physics` <Step text="2"/> : If true state of simulating physics will
+be restored. This parameter has no effect when bVisible is set to false and
+is only used when bVisible is set to true.
+
+![Set Item Simulation State](_static/img/utility/set-item-simulation-state.png)
