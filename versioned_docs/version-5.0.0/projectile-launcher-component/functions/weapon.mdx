@@ -1,0 +1,120 @@
+---
+sidebar_position: 1
+title: Weapon
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Begin Fire
+
+When `SV Begin Fire` is called on an owning client, this will invoke an RPC on
+the server.
+
+The server will run checks whether the weapon can be currently fired and if so
+it will perform firing the weapon according to the selected fire mode.
+
+![Begin Fire](_static/img/weapon/begin-fire.png)
+
+:::note
+The function is only executed on the server.
+:::
+
+## End Fire
+
+When `SV End Fire` is called on an owning client, this will invoke an RPC on
+the server.
+
+The server will end firing the weapon according to the selected fire mode.
+
+Calls the `OnBurstInterrupted` event dispatcher when a burst fire action was
+interrupted.
+Calls the `OnBurstFinished` event dispatcher when a burst fire action is finished.
+
+![End Fire](_static/img/weapon/end-fire.png)
+
+:::note
+The function is only executed on the server.
+:::
+
+## Spawn Projectile
+
+`Spawn Projectile` spawns a new projectile actor using the class that is returned
+from `GetProjectileClass()`.
+
+The projectile's spawn location and rotation will be determined by
+`GetSafeProjectileSpawnLocation()` and `CalculateFireSpread()` respectively.
+
+Calls the `OnProjectileSpawned` event dispatcher after successfully spawning
+the projectile.
+
+![Spawn Projectile](_static/img/weapon/spawn-projectile.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Can Fire
+
+`Can Fire` checks if the weapon can fire in two steps:
+1. Safety Lock needs to be disabled and a non-empty ammo sequence must be defined.
+(See: `bSafetyLockEnabled` and `AmmoSequence`)
+2. Is there enough available ammo to consume?
+(See: `AmmoCount` and `AmmoConsumptionPerShot`)
+
+Exception for step 2: If `bInfiniteAmmoEnabled` is set to true, the check for
+enough ammo will be skipped.
+
+![Can Fire](_static/img/weapon/can-fire.png)
+
+True if the weapon can fire. Otherwise, false.
+
+## Reload Weapon
+
+`Reload Weapon` reloads the weapon by setting a new ammo count.
+
+Calls the `OnWeaponReloaded` event dispatcher.
+* `New Ammo Count` <Step text="1"/> : New amount of ammo.
+* `Reset Ammo Sequence Index` <Step text="2"/> : If true, `AmmoSequenceIndex`
+will be reset.
+
+![Reload Weapon](_static/img/weapon/reload-weapon.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Is Safety Lock Enabled
+
+`Is Safety Lock Enabled` checks is safety lock enabled.
+
+![Is Safety Lock Enabled](_static/img/weapon/is-safety-lock-enabled.png)
+
+## Set Safety Lock Enabled
+
+`Set Safety Lock Enabled` sets the state of the safety lock of
+the projectile launcher.
+* `Enabled` <Step text="1"/> : If true, the projectile launcher can fire.
+Otherwise, firing is prevented.
+
+![Set Safety Lock Enabled](_static/img/weapon/set-safety-lock-enabled.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Get Fire Mode
+
+`Get Fire Mode` gets the fire mode of the projectile launcher.
+
+![Get Fire Mode](_static/img/weapon/get-fire-mode.png)
+
+## Set Fire Mode
+
+`Set Fire Mode` sets the fire mode of the projectile launcher.
+* `Fire Mode` <Step text="1"/> : The new fire mode.
+
+![Set Fire Mode](_static/img/weapon/set-fire-mode.png)
+
+:::note
+This function should only be called with authority.
+:::
