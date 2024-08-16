@@ -4,3 +4,65 @@ title: Overview
 ---
 
 import {Step} from '@site/src/lib/utils.mdx'
+
+## Projectile Settings
+
+![Projectile Settings](_static/img/overview/projectile-settings.png)
+
+* `Projectile Radius` : Radius of the projectile.
+* `Penetration Trace Channel` : Collision channel to use for projectile
+penetration logic.
+* `Bounce Limit` : How many bounces can the projectile make before being stopped.
+* `Ricochet Factor` : Most-influencing factor for projectile ricochet chance.
+Other factors affecting the ricochet chance are the properties of the physical
+material.
+* `Penetration Power` : How many centimeters of material of shear strength
+(Default: 6) it can penetrate at a velocity of 10000.
+* `Server Correction` : Set to true if proper rotation of the bullet is
+important on multiplayer.
+
+## Events
+
+:::note
+Keep in mind that those events will be called only on the server, so there is
+no need for checking authority nor using RPCs.
+:::
+
+### On Projectile Terminal Hit
+
+`On Projectile Terminal Hit` called when the projectile has come to a stop
+(velocity is below simulation threshold, bounces are disabled, or it is forcibly
+stopped).
+
+* `Hit Result` <Step text="1"/> : The last hit result of the projectile.
+
+![On Projectile Terminal Hit](_static/img/overview/on-projectile-terminal-hit.png)
+
+### On Projectile Ricocheted
+
+`On Projectile Ricocheted` called when the projectile has ricocheted (bounced).
+
+* `Velocity` <Step text="1"/> : The velocity of the projectile.
+* `Hit Result` <Step text="2"/> : The hit result of the projectile.
+* `Bounces` <Step text="3"/> : The number of bounces that the projectile has
+already made.
+* `Ricochet Result` <Step text="4"/> : The ricochet result data the ricochet was
+based on.
+* `Hit Transform` <Step text="5"/> : The calculated hit transform of the
+projectile. See: `CalculateHitTransform()`.
+* `Bounce Transform` <Step text="6"/> : The calculated bounce transform of the
+projectile. See: `CalculateBounceTransform()`.
+
+![On Projectile Ricocheted](_static/img/overview/on-projectile-ricocheted.png)
+
+### On Projectile Penetrated
+
+`On Projectile Penetrated` called when the projectile has penetrated an object.
+
+* `Velocity` <Step text="1"/> : The velocity of the projectile.
+* `Entry Hit Result` <Step text="2"/> : The hit result of the projectile on
+entry.
+* `Penetration Result` <Step text="3"/> : The penetration result data the
+penetration was based on.
+
+![On Projectile Penetrated](_static/img/overview/on-projectile-penetrated.png)
