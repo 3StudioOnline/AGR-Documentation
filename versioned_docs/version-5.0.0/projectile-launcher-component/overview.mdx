@@ -18,7 +18,13 @@ and provide a wide range of configurations for project-specific use-cases.
 * `Projectile Initial Speed` : The projectile's initial speed when spawned.
 * `Add Owner Speed` : If true, the Projectile Launcher component's velocity
 will be added to the initial speed of the projectile.
-* `Fire Rate` : The frequency at which the weapon can fire.
+* `Fire Interval` : The interval at which the weapon can fire.
+
+:::note
+Example:
+* `Fire Interval` = 1, this means that you are allowed to shoot 1 projectile every second.
+:::
+
 * `Fire Spread` : This value is used to calculate a randomized angle for
 a new projectile. See `CalculateFireSpread()` for more details.
 * `Burst Count` : The maximum amount of ammo that will be shot when
