@@ -1,0 +1,77 @@
+---
+sidebar_position: 2
+title: Functions
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Get Raw Aim Offset Pitch
+
+`Get Raw Aim Offset Pitch` gets the controller's pitch that takes network
+replication into account. Value is internally calculated by unwinding the
+rotation to its "shortest route" rotation.
+
+![Get Raw Aim Offset Pitch](_static/img/functions/get-raw-aim-offset-pitch.png)
+
+## Get Raw Aim Offset Yaw
+
+`Get Raw Aim Offset Yaw` gets the controller's yaw that takes network
+replication into account.
+
+![Get Raw Aim Offset Yaw](_static/img/functions/get-raw-aim-offset-yaw.png)
+
+## Calculate Aim Offset Rotator
+
+`Calculate Aim Offset Rotator` calculates rotation from aim offset.
+Useful for IK.
+
+![Calculate Aim Offset Rotator](_static/img/functions/calculate-aim-offset-rotator.png)
+
+## Get Delta Aim Pitch
+
+`Get Delta Aim Pitch` calculates the remaining aim pitch util reaching target
+value.
+
+![Get Delta Aim Pitch](_static/img/functions/get-delta-aim-pitch.png)
+
+## Get Delta Aim Yaw
+
+`Get Delta Aim Yaw` calculates the remaining aim yaw util reaching target value.
+
+![Get Delta Aim Yaw](_static/img/functions/get-delta-aim-yaw.png)
+
+## Calculate Mesh Velocity
+
+`Calculate Mesh Velocity` calculates the velocity in relation to the skeletal
+mesh's root bone orientation.
+
+![Calculate Mesh Velocity](_static/img/functions/calculate-mesh-velocity.png)
+
+## Calculate Direction Angle
+
+`Calculate Direction Angle` calculates angle for movement direction relative to
+the mesh's root bone rotation.
+
+![Calculate Direction Angle](_static/img/functions/calculate-direction-angle.png)
+
+## Is Rotating
+
+`Is Rotating` checks whether skeletal mesh is rotating.
+
+![Is Rotating](_static/img/functions/is-rotating.png)
+
+Returns true, if skeletal mesh is rotating. Otherwise, false.
+
+## Is Rotating Left
+
+`Is Rotating Left` checks if pawn is leaning to the left side.
+
+![Is Rotating Left](_static/img/functions/is-rotating-left.png)
+
+Returns true, if leaning left. Otherwise, false.
+
+## Get Locomotion Component
+
+`Get Locomotion Component` gets `Locomotion Component`.
+
+![Get Locomotion Component](_static/img/functions/get-locomotion-component.png)
