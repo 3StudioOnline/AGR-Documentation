@@ -19,25 +19,23 @@ and provide a wide range of configurations for project-specific use-cases.
 * `Add Owner Speed` : If true, the Projectile Launcher component's velocity
 will be added to the initial speed of the projectile.
 * `Fire Interval` : The interval at which the weapon can fire.
-
-:::note
-Example:
-* `Fire Interval` = 1, this means that you are allowed to shoot 1 projectile every second.
-:::
-
 * `Fire Spread` : This value is used to calculate a randomized angle for
-a new projectile. See `CalculateFireSpread()` for more details.
+a new projectile. See [CalculateFireSpread()](/docs/projectile-module/projectile-launcher-component/functions/aiming#calculate-fire-spread)
+for more details.
 * `Burst Count` : The maximum amount of ammo that will be shot when
-calling `BeginFire().`
+calling [BeginFire()](/docs/projectile-module/projectile-launcher-component/functions/weapon#begin-fire).
+* `Burst Cooldown` : The delay before another burst fire can be triggered.
+* `Fire Mode` : The weapon's [fire mode](/docs/projectile-module/types#fire-mode)
+that defines the firing behavior.
 
-:::note
-`Burst Count` applies to the following fire modes only:
+:::note notes
+`Fire Interval` = 1, this means that you are allowed to shoot 1 projectile every second.
+
+`Burst Count` applies to the following [fire modes](/docs/projectile-module/types#fire-mode)
+only:
 - `Burst`
 - `InterruptibleBurst`
 :::
-
-* `Burst Cooldown` : The delay before another burst fire can be triggered.
-* `Fire Mode` : The weapon's fire mode that defines the firing behavior.
 
 ### Optimization
 * `Limit Shots Per Frame` : Set this variable to true in order to avoid unwanted
@@ -56,7 +54,8 @@ This defines where the crosshair is.
 * `Client Aim Trace Distance` : The distance to trace from
 `ClientScreenSpaceAimCoords` into the world.
 * `Auto Update Ignore List` : If set to true, `ActorsIgnoredByProjectiles`
-will be updated every time `BeginFire()` is called.
+will be updated every time [BeginFire()](/docs/projectile-module/projectile-launcher-component/functions/weapon#begin-fire)
+is called.
 
 ### Ammo
 * `Ammo Consumption Per Shot` : The amount of ammo to consume per shot.
@@ -69,34 +68,39 @@ cycled through (with wrapping) when firing a shot.
 `Ammo Sequence` is not intended to work like a magazine for a gun but to
 implement special behavior.
 
-Examples:
-- Fire normal projectiles only : 1x NormalProjectile
-- Fire explosive projectiles only : 1x ExplosiveProjectile
-- Every 5th shot spawns an explosive projectile :
-4x NormalProjectile + 1x ExplosiveProjectile
-- The first shot of a reloaded weapon deals double damage :
-1x DoubleDmgProjectile + 29x NormalProjectile
-- The last  shot of a reloaded weapon deals double damage :
-29x NormalProjectile + 1x DoubleDmgProjectile
-- etc.
-
 If you need to customize how Projectile classes are selected when firing,
 override `GetProjectileClass()`.
 :::
 
-### User Data
-* `Weapon Damage` : Weapon damage value passed to spawned projectiles.
-
-:::note
-Example:
-- It could be used to calculate the actual damage dealt by
-this projectile without having to know its parent actor.
+:::tip examples
+Examples for `Ammo Sequence`:
+- Fire normal projectiles only : `1x NormalProjectile`
+- Fire explosive projectiles only : `1x ExplosiveProjectile`
+- Every 5th shot spawns an explosive projectile :
+`4x NormalProjectile` + `1x ExplosiveProjectile`
+- The first shot of a reloaded weapon deals double damage :
+`1x DoubleDmgProjectile` + `29x NormalProjectile`
+- The last  shot of a reloaded weapon deals double damage :
+`29x NormalProjectile` + `1x DoubleDmgProjectile`
+- etc.
 :::
 
+### User Data
+* `Weapon Damage` : Weapon damage value passed to spawned projectiles.
 * `Weapon Tags` : GameplayTagContainer passed to spawned projectiles.
 
 :::note
-Examples:
+The properties `Weapon Damage` and `Weapon Tags` are passed as-is from
+`Projectile Launcher` to spawned `Projectiles`.
+It is up to the developer to define meaning and values as needed.
+:::
+
+:::note examples
+Example for `Weapon Damage`:
+- It could be used to calculate the actual damage dealt by
+this projectile without having to know its parent actor.
+
+Example for `Weapon Tags`:
 - Tags could describe upgrades that were applied by the weapon at the time of
 firing.
 - Apply a GameplayEffect when a target is hit by this projectile.
@@ -195,6 +199,6 @@ no need for checking authority nor using RPCs.
 ### On Fire Mode Updated
 
 `On Fire Mode Updated` event will be called when the fire mode was updated.
-* `Fire Mode` <Step text="1"/> : New fire mode.
+* `Fire Mode` <Step text="1"/> : New [fire mode](/docs/projectile-module/types#fire-mode).
 
 ![On Fire Mode Updated](_static/img/overview/on-fire-mode-updated.png)

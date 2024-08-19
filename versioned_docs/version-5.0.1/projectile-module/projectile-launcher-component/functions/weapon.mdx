@@ -11,7 +11,7 @@ When `SV Begin Fire` is called on an owning client, this will invoke an RPC on
 the server.
 
 The server will run checks whether the weapon can be currently fired and if so
-it will perform firing the weapon according to the selected fire mode.
+it will perform firing the weapon according to the selected [fire mode](/docs/projectile-module/types#fire-mode).
 
 ![Begin Fire](_static/img/weapon/begin-fire.png)
 
@@ -24,7 +24,7 @@ The function is only executed on the server.
 When `SV End Fire` is called on an owning client, this will invoke an RPC on
 the server.
 
-The server will end firing the weapon according to the selected fire mode.
+The server will end firing the weapon according to the selected [fire mode](/docs/projectile-module/types#fire-mode).
 
 Calls the `OnBurstInterrupted` event dispatcher when a burst fire action was
 interrupted.
@@ -42,7 +42,8 @@ The function is only executed on the server.
 from `GetProjectileClass()`.
 
 The projectile's spawn location and rotation will be determined by
-`GetSafeProjectileSpawnLocation()` and `CalculateFireSpread()` respectively.
+`GetSafeProjectileSpawnLocation()` and [CalculateFireSpread()](/docs/projectile-module/projectile-launcher-component/functions/aiming#calculate-fire-spread)
+respectively.
 
 Calls the `OnProjectileSpawned` event dispatcher after successfully spawning
 the projectile.
@@ -104,14 +105,15 @@ This function should only be called with authority.
 
 ## Get Fire Mode
 
-`Get Fire Mode` gets the fire mode of the projectile launcher.
+`Get Fire Mode` gets [the fire mode](/docs/projectile-module/types#fire-mode)
+of the projectile launcher.
 
 ![Get Fire Mode](_static/img/weapon/get-fire-mode.png)
 
 ## Set Fire Mode
 
 `Set Fire Mode` sets the fire mode of the projectile launcher.
-* `Fire Mode` <Step text="1"/> : The new fire mode.
+* `Fire Mode` <Step text="1"/> : The new [fire mode](/docs/projectile-module/types#fire-mode).
 
 ![Set Fire Mode](_static/img/weapon/set-fire-mode.png)
 

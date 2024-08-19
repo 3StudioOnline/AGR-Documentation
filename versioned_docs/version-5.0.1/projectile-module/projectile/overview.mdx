@@ -9,6 +9,8 @@ AGR Projectiles have the ability to ricochet and penetrate objects depending on
 the projectile's properties as well as the Physical Material of hit objects if
 assigned.
 
+![Create Projectile](_static/img/overview/create-projectile.png)
+
 ## Projectile Settings
 
 ![Projectile Settings](_static/img/overview/projectile-settings.png)
@@ -50,12 +52,12 @@ stopped).
 * `Hit Result` <Step text="2"/> : The hit result of the projectile.
 * `Bounces` <Step text="3"/> : The number of bounces that the projectile has
 already made.
-* `Ricochet Result` <Step text="4"/> : The ricochet result data the ricochet was
-based on.
+* `Ricochet Result` <Step text="4"/> : [The ricochet result](/docs/projectile-module/types#ricochet-result)
+data the ricochet was based on.
 * `Hit Transform` <Step text="5"/> : The calculated hit transform of the
-projectile. See: `CalculateHitTransform()`.
+projectile. See: [CalculateHitTransform()](/docs/projectile-module/projectile/functions#calculate-hit-transform).
 * `Bounce Transform` <Step text="6"/> : The calculated bounce transform of the
-projectile. See: `CalculateBounceTransform()`.
+projectile. See: [CalculateBounceTransform()](/docs/projectile-module/projectile/functions#calculate-bounce-transform).
 
 ![On Projectile Ricocheted](_static/img/overview/on-projectile-ricocheted.png)
 
@@ -66,7 +68,7 @@ projectile. See: `CalculateBounceTransform()`.
 * `Velocity` <Step text="1"/> : The velocity of the projectile.
 * `Entry Hit Result` <Step text="2"/> : The hit result of the projectile on
 entry.
-* `Penetration Result` <Step text="3"/> : The penetration result data the
-penetration was based on.
+* `Penetration Result` <Step text="3"/> : [The penetration result](/docs/projectile-module/types#penetration-result)
+data the penetration was based on.
 
 ![On Projectile Penetrated](_static/img/overview/on-projectile-penetrated.png)
