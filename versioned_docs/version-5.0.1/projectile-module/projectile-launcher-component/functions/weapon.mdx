@@ -26,9 +26,10 @@ the server.
 
 The server will end firing the weapon according to the selected [fire mode](/docs/projectile-module/types#fire-mode).
 
-Calls the `OnBurstInterrupted` event dispatcher when a burst fire action was
-interrupted.
-Calls the `OnBurstFinished` event dispatcher when a burst fire action is finished.
+Calls the [OnBurstInterrupted](/docs/projectile-module/projectile-launcher-component/overview#on-burst-interrupted)
+event dispatcher when a burst fire action was interrupted.
+Calls the [OnBurstFinished](/docs/projectile-module/projectile-launcher-component/overview#on-burst-finished)
+event dispatcher when a burst fire action is finished.
 
 ![End Fire](_static/img/weapon/end-fire.png)
 
@@ -45,8 +46,8 @@ The projectile's spawn location and rotation will be determined by
 `GetSafeProjectileSpawnLocation()` and [CalculateFireSpread()](/docs/projectile-module/projectile-launcher-component/functions/aiming#calculate-fire-spread)
 respectively.
 
-Calls the `OnProjectileSpawned` event dispatcher after successfully spawning
-the projectile.
+Calls the [OnProjectileSpawned](/docs/projectile-module/projectile-launcher-component/overview#on-projectile-spawned)
+event dispatcher after successfully spawning the projectile.
 
 ![Spawn Projectile](_static/img/weapon/spawn-projectile.png)
 
@@ -73,7 +74,8 @@ True if the weapon can fire. Otherwise, false.
 
 `Reload Weapon` reloads the weapon by setting a new ammo count.
 
-Calls the `OnWeaponReloaded` event dispatcher.
+Calls the [OnWeaponReloaded](/docs/projectile-module/projectile-launcher-component/overview#on-weapon-reloaded)
+event dispatcher.
 * `New Ammo Count` <Step text="1"/> : New amount of ammo.
 * `Reset Ammo Sequence Index` <Step text="2"/> : If true, `AmmoSequenceIndex`
 will be reset.
