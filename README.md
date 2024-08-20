@@ -1,1 +1,46 @@
-.........TODO............
+📽 [Tutorial Videos](https://www.youtube.com/playlist?list=PLTztLWdi2XEFUVxxgPr3jSs6yWYG-oQV_) </br>
+📖 [Documentation](https://3studioonline.github.io/AGR-Documentation/) </br>
+📆 [Roadmap](https://3studioonline.github.io/AGR-Documentation/roadmap) <br/>
+🛰 [Discord](http://discord.3studio.online) <br/>
+
+## AGR Plugin
+`AGR V` Plugin is a powerful and versatile suite of components and tools
+designed to streamline the development of complex gameplay mechanics in *Unreal
+Engine 5*. Built on years of experience and community-driven feedback, `AGR V`
+introduces advanced systems for locomotion, inventory management, and projectile
+mechanics, all with a focus on multiplayer performance and scalability.
+This modular toolkit is ideal for developers looking to create large-scale
+multiplayer experiences, offering seamless integration with *Unreal Engine’s*
+existing features and simplifying the creation of immersive, responsive gameplay.
+
+### AGR Locomotion
+`AGR Locomotion` drives character rotation and aim offset with extreme precision,
+ensuring smooth, jitter-free animations, even in first-person perspectives.
+Designed for multiplayer environments, it leverages *Unreal Engine 5's*
+thread-safe functionality and asynchronous proxy calls, minimizing multiplayer
+footprint by using only replicated movement data. It supports both character and
+pawn classes and integrates easily with any movement component.
+
+### AGR Inventory
+`AGR Inventory` system combines inventory and equipment management into a single,
+efficient component. It features custom serialization and replication for
+seamless multiplayer performance, allowing for persistent item storage and
+automatic inventory updates upon player reconnection.
+The system includes event dispatchers for UI updates and item logic, making it
+highly customizable and easy to integrate into any project.
+
+### AGR Projectile
+`AGR Projectile` includes a projectile launcher and projectile components,
+offering a robust system for spawning and managing projectiles with custom
+penetration and bounce logic. It supports homing, physical material interaction,
+and physics sub-stepping, ensuring realistic and performant projectile behavior
+in multiplayer settings. The system is easy to set up, highly configurable, and
+designed with network optimization in mind.
+
+### AGR Function Library
+An ever-growing library of utility functions designed to streamline common game
+development tasks. Current features include functions for camera and cursor aim
+calculations, component retrieval, angle calculations for hit reactions or
+ricochets, and velocity-based rotation determination.
+This library enhances development efficiency by providing ready-to-use solutions
+for frequent challenges.
