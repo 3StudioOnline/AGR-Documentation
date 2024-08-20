@@ -1,0 +1,76 @@
+---
+sidebar_position: 2
+title: Ammo
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Consume Ammo
+
+`Consume Ammo` reduces `AmmoCount` by `AmmoConsumptionPerShot` but only if
+`bInfiniteAmmoEnabled` is set to false.
+
+:::note
+This function does not prevent the `AmmoCount` to become a negative value.
+:::
+
+![Consume Ammo](_static/img/ammo/consume-ammo.png)
+
+## Get Ammo Count
+
+`Get Ammo Count` gets current ammo count.
+
+![Get Ammo Count](_static/img/ammo/get-ammo-count.png)
+
+## Set Ammo Count
+
+`Set Ammo Count` sets a new ammo count.
+* `New Ammo Count` <Step text="1"/> : New amount of ammo.
+
+![Set Ammo Count](_static/img/ammo/set-ammo-count.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Get Ammo Sequence
+
+`Get Ammo Sequence` gets ammo sequence set in the projectile launcher.
+
+![Get Ammo Sequence](_static/img/ammo/get-ammo-sequence.png)
+
+## Set Ammo Sequence
+
+`Set Ammo Sequence` sets a new ammo sequence and resets the `AmmoSequenceIndex`.
+
+Calls the [OnAmmoSequenceUpdated](/docs/projectile-module/projectile-launcher-component/overview#on-ammo-sequence-updated)
+event dispatcher when a new ammo sequence was
+set.
+* `Ammo Sequence` <Step text="1"/> : The new ammo sequence.
+
+![Set Ammo Sequence](_static/img/ammo/set-ammo-sequence.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Is Infinite Ammo Enabled
+
+`Is Infinite Ammo Enabled` checks is infinite ammo enabled.
+
+![Is Infinite Ammo Enabled](_static/img/ammo/is-infinite-ammo-enabled.png)
+
+## Set Infinite Ammo Enabled
+
+`Set Infinite Ammo Enabled` sets is infinite ammo should be enabled.
+If infinite ammo is enabled it will make the Projectile Launcher completely skip
+ammo consumption logic.
+See: [CanFire()](/docs/projectile-module/projectile-launcher-component/functions/weapon#can-fire),
+[ConsumeAmmo()](/docs/projectile-module/projectile-launcher-component/functions/ammo#consume-ammo).
+* `Enabled` <Step text="1"/> : If true, ammo will be infinite.
+
+![Set Infinite Ammo Enabled](_static/img/ammo/set-infinite-ammo-enabled.png)
+
+:::note
+This function should only be called with authority.
+:::

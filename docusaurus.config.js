@@ -25,7 +25,7 @@ const globalRehypePlugins = [
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: "3S Game Studio AGR Plugin",
-    tagline: "...........TODO............",
+    tagline: "AGR V (Advanced Game Resources) is the successor to the AGR PRO framework, continuing to deliver quality, reliable, and performant multiplayer gameplay.",
     organizationName: "3StudioOnline", // Usually your GitHub org/user name.
     projectName: "AGR-Documentation", // Usually your repo name.
     deploymentBranch: "gh-pages",
@@ -56,7 +56,7 @@ const config = {
                     showLastUpdateTime: false,
                     includeCurrentVersion: false,
                     versions: {
-                        "5.0.0": {
+                        "5.0.1": {
                             banner: "none",
                         },
                     },

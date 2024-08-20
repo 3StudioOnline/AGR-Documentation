@@ -36,8 +36,12 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-a, .navbar__link, .menu__list-item, .menu__link, .breadcrumbs__link {
+.navbar__link, .menu__list-item, .menu__link, .breadcrumbs__link {
   color: #555;
+}
+
+.a {
+  color: var(--ifm-color-primary-lightest);
 }
 
 a:hover {
@@ -48,7 +52,6 @@ a:hover {
   background-color: var(--ifm-color-primary-darkest);
 }
 
-[data-theme='dark'] a,
 [data-theme='dark'] .navbar__link,
 [data-theme='dark'] .menu__link,
 [data-theme='dark'] .breadcrumbs__link {
