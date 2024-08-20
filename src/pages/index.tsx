@@ -32,7 +32,7 @@ export default function Home(): JSX.Element {
     return (
         <Layout
             title={""}
-            description="..........TODO..................">
+            description="Adds powerful components and tools designed to streamline the development of complex gameplay mechanics in Unreal Engine 5.">
             <HomepageHeader/>
             <main>
                 {/*<HomepageFeatures/>*/}
