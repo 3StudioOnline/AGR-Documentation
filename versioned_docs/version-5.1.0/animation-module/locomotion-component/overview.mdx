@@ -1,0 +1,72 @@
+---
+sidebar_position: 1
+title: Overview
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+The `AGR Locomotion Component` is responsible for multiplayer management of aim
+offset, rotation methods and animation pose state updates. It works in tandem
+with the `AGR Anim Instance`.
+
+## Locomotion Component Settings
+
+![Locomotion Component Settings](_static/img/overview/locomotion-settings.png)
+
+### Config
+* `Update Allowed by Client` : If false, all changes to animation poses done by
+the client will only be local and never replicated.
+
+:::note
+This value cannot be changed at run-time.
+:::
+
+### State
+* `Rotation Method` : Controls how the actor is [rotated](/docs/animation-module/types#rotation-method).
+* `Aim Method` : Controls how the actor is [aiming](/docs/animation-module/types#aim-method).
+* `Pose` : Current pose represented by a tag.
+* `Animation States` : Gameplay tag container that is used to store animation
+states.
+
+## Events
+
+### On Rotation Method Updated
+
+`On Rotation Method Updated` event will be called when the `Rotation Method` of
+the component changes.
+
+* `Old Rotation Method` <Step text="1"/> : Old actors [rotation method](/docs/animation-module/types#rotation-method).
+* `New Rotation Method` <Step text="2"/> : New actors [rotation method](/docs/animation-module/types#rotation-method).
+
+![On Rotation Method Updated](_static/img/overview/on-rotation-method-updated.png)
+
+### On Aim Method Updated
+
+`On Aim Method Updated` event will be called when the `Aim Method` of the component
+changes.
+
+* `Old Aim Method` <Step text="1"/> : Old actors [aim method](/docs/animation-module/types#aim-method).
+* `New Aim Method` <Step text="2"/> : New actors [aim method](/docs/animation-module/types#aim-method).
+
+![On Aim Method Updated](_static/img/overview/on-aim-method-updated.png)
+
+### On Pose Updated
+
+`On Pose Updated` event will be called when the `Pose` of the component changes.
+
+* `Old Pose` <Step text="1"/> : Old actors pose represented by a tag.
+* `New Pose` <Step text="2"/> : New actors pose represented by a tag.
+
+![On Pose Updated](_static/img/overview/on-pose-updated.png)
+
+### On Animation States Updated
+
+`On Animation States Updated` event will be called when the `AnimationStates` of
+the component changes.
+
+* `Tags Added` <Step text="1"/> : The array of tags added to `AnimationStates`
+tag container.
+* `Tags Removed` <Step text="2"/> : The array of tags removed from
+`AnimationStates` tag container.
+
+![On Animation States Updated](_static/img/overview/on-animation-states-updated.png)

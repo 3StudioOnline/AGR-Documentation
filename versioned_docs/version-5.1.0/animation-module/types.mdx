@@ -1,0 +1,28 @@
+---
+sidebar_position: 3
+title: Types
+---
+import {Step, Highlight} from '@site/src/lib/utils.mdx'
+
+## Enums
+
+### Rotation Method
+`Rotation Method` enum value is used to specify which rotation method
+the `AGR Rotation` node should use.
+Values:
+* `No Rotation`
+* `Absolute Rotation`
+* `Rotate to Movement`
+* `Rotate to Aim`
+* `Rotate to Aim at Angle`
+
+### Aim Method
+`Aim Method` enum value determines how the pawn control rotation should be
+interpreted as aim offset by `AGR Anim Instance`.
+Values:
+* `No Aim Offset`
+* `Free Look`
+* `Free Look (Clamped)`
+* `Free Look (Clamped & Locked)`
+* `Forward Facing`
+* `Look at Movement Direction`

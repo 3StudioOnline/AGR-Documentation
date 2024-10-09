@@ -1,0 +1,40 @@
+---
+sidebar_position: 3
+title: Types
+---
+import {Step, Highlight} from '@site/src/lib/utils.mdx'
+
+## Enums
+
+### Fire Mode
+`Fire Mode` enum value describes the fire mode of the projectile launcher.
+Values:
+* `Semi Auto`
+* `Full Auto`
+* `Burst`
+* `Interruptible Burst`
+* `Custom`
+
+## Structs
+
+### Ricochet Result
+`Ricochet Result` struct holds the calculated data after checking for a possible
+ricochet response for the projectile.
+Values:
+* `Should Ricochet` : True, if the projectile should ricochet.
+* `Ricochet Chance` : The ricochet chance of the projectile on bounce.
+* `Ricochet Angle` : The angle of incidence (incoming).
+
+### Penetration Result
+`Penetration Result` struct holds the calculated data after checking for a possible
+penetration for the projectile.
+Values:
+* `Should Penetrate` : True, if the projectile should penetrate.
+* `Penetrate Hit Result` : The hit result of the penetrated object.
+* `Penetration Depth` : The calculated penetration depth of the projectile.
+* `Penetration Ratio` : The calculated penetration ratio of the projectile based
+on penetration distance over depth.
+* `Entry Transform` : The calculated transform of the projectile on entry.
+See: [CalculateHitTransform()](/docs/projectile-module/projectile/functions#calculate-hit-transform).
+* `Exit Transform` : The calculated transform of the projectile on exit.
+See: [CalculateHitTransform()](/docs/projectile-module/projectile/functions#calculate-hit-transform).

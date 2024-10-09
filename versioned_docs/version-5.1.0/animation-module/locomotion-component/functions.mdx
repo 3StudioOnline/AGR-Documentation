@@ -1,0 +1,97 @@
+---
+sidebar_position: 2
+title: Functions
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Is Update Allowed by Client
+
+`Is Update Allowed by Client` checks if update is allowed by client. If false, all
+changes to animation poses done by the client will only be local and never
+replicated.
+
+![Is Update Allowed by Client](_static/img/functions/is-update-allowed-by-client.png)
+
+## Get Rotation Method
+
+`Get Rotation Method` gets the [rotation method](/docs/animation-module/types#rotation-method).
+
+![Get Rotation Method](_static/img/functions/get-rotation-method.png)
+
+## Set Rotation Method
+
+`Set Rotation Method` sets the rotation method (Network replicated).
+* `Rotation Method` <Step text="1"/> : The new [rotation method](/docs/animation-module/types#rotation-method).
+
+![Set Rotation Method](_static/img/functions/set-rotation-method.png)
+
+## Get Aim Method
+
+`Get Aim Method` gets the [aim method](/docs/animation-module/types#aim-method).
+
+![Get Aim Method](_static/img/functions/get-aim-method.png)
+
+## Set Aim Method
+
+`Set Aim Method` sets the aim method (Network replicated).
+
+* `Ain Method` <Step text="1"/> : The new [aim method](/docs/animation-module/types#aim-method).
+
+![Set Aim Method](_static/img/functions/set-aim-method.png)
+
+## Get Pose
+
+`Get Pose` gets current pose represented by a tag.
+
+![Get Pose](_static/img/functions/get-pose.png)
+
+## Set Pose
+
+`Set Pose` sets the pose (Network replicated).
+* `Pose` <Step text="1"/> : The new pose.
+
+![Set Pose](_static/img/functions/set-pose.png)
+
+## Get Animation States
+
+`Get Animation States` gets `AnimationStates` gameplay tag container.
+
+![Get Animation States](_static/img/functions/get-animation-states.png)
+
+## Set Animation States
+
+`Set Animation States` sets `AnimationStates` (Network replicated).
+* `Animation States` <Step text="1"/> : Gameplay tag container to set
+`AnimationStates` to.
+
+![Set Animation States](_static/img/functions/set-animation-states.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Add Animation States
+
+`Add Animation States` adds tags to the `AnimationStates` gameplay tag container.
+* `Animation States to Add` <Step text="1"/> : Gameplay tag container with tags
+to add to `AnimationStates`.
+
+![Add Animation States](_static/img/functions/add-animation-states.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Remove Animation States
+
+`Remove Animation States` removes tags from the `AnimationStates` gameplay tag
+container.
+* `Animation States to Remove` <Step text="1"/> : Gameplay tag container with
+tags to remove from `AnimationStates`.
+
+![Remove Animation States](_static/img/functions/remove-animation-states.png)
+
+:::note
+This function should only be called with authority.
+:::
