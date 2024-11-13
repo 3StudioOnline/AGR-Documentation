@@ -1,0 +1,63 @@
+---
+sidebar_position: 3
+title: Interface
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+This interface allows to add custom logic for AGR Items.
+Simply add this interface to your actor representing an item which uses
+the AGR Item component.
+
+## Can Item be Picked Up
+
+`Can Item be Picked Up` checks if this item can be picked up.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+tries to pick up this item.
+
+![Can Item be Picked Up](_static/img/interface/can-item-be-picked-up.png)
+
+## Can Item be Equipped
+
+`Can Item be Equipped` checks if this item can be equipped.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+tries to equip this item.
+* `Slot` <Step text="2"/> : Slot into which the item will be equipped.
+
+![Can Item be Equipped](_static/img/interface/can-item-be-equipped.png)
+
+## Can Item be Unequipped
+
+`Can Item be Unequipped` checks if this item can be unequipped.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+tries to unequip this item.
+* `Slot` <Step text="2"/> : Slot from which the item will be unequipped.
+
+![Can Item be Unequipped](_static/img/interface/can-item-be-unequipped.png)
+
+## Can Item be Used
+
+`Can Item be Used` checks if this item can be used.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+tries to use this item.
+* `Action Type` <Step text="2"/> : Type of action how the item will be used.
+
+![Can Item be Used](_static/img/interface/can-item-be-used.png)
+
+## Can Item be Dropped
+
+`Can Item be Dropped` checks if this item can be dropped.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+tries to drop this item.
+
+![Can Item be Dropped](_static/img/interface/can-item-be-dropped.png)
+
+## Can Item be Destroyed
+
+`Can Item be Destroyed` checks if this item can be destroyed.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+tries to destroy this item.
+
+![Can Item be Destroyed](_static/img/interface/can-item-be-destroyed.png)
+
+
