@@ -1,0 +1,71 @@
+---
+sidebar_position: 1
+title: Item Actions
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+:::note
+All of the item action functions should only be called with authority.
+:::
+
+## Pick Up Item
+
+`Pick Up Item` picks up this item.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+picks up this item.
+* `Hide on Pick Up` <Step text="2"/> : If true this item will become invisible
+after picked up.
+* `Auto Stack` <Step text="3"/> : If true will try to stack this item with other
+already existing instances of this item in the actors inventory.
+* `Force Update Owner` <Step text="4"/> : If true will overwrite items owner ID to
+inventories ID.
+
+![Pick Up Item](_static/img/item-actions/pick-up-item.png)
+
+## Equip Item
+
+`Equip Item` equips this item.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+equips this item.
+* `Slot` <Step text="2"/> : Slot into which one to equip the item.
+* `Visible` <Step text="3"/> : If true will make item visible.
+
+![Equip Item](_static/img/item-actions/equip-item.png)
+
+## Unequip Item
+
+`Unequip Item` unequips this item.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+unequips this item.
+* `Slot` <Step text="2"/> : Slot from which one to unequip the item.
+
+![Unequip Item](_static/img/item-actions/unequip-item.png)
+
+## Use Item
+
+`Use Item` uses this item.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+uses this item.
+* `Action Type` <Step text="2"/> : Type of action to call on this item.
+
+![Use Item](_static/img/item-actions/use-item.png)
+
+## Drop Item
+
+`Drop Item` drops this item.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+drops this item.
+* `Drop Location` <Step text="2"/> : Items location after it is dropped.
+* `Drop Rotation` <Step text="3"/> : Items rotation after it is dropped.
+* `Clear Owner` <Step text="4"/> : If true clear items owner ID.
+
+![Drop Item](_static/img/item-actions/drop-item.png)
+
+## Destroy Item
+
+`Destroy Item` destroys this item.
+* `Inventory Component` <Step text="1"/> : Inventory component of an actor that
+destroys this item.
+
+![Destroy Item](_static/img/item-actions/destroy-item.png)

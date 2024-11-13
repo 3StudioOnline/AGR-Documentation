@@ -1,0 +1,39 @@
+---
+sidebar_position: 3
+title: Projectile Base
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+`AGR Projectile Base` is the low-level class for implementing `AGR Projectiles` and
+using them with the `AGR Projectile Launcher Component`.
+It also extends the movement logic by using the `AGR Projectile Movement Component`.
+
+![Create Projectile Base](_static/img/projectile-base/create-projectile-base.png)
+
+:::tip hint
+Usually, what you are looking for is the `AGR Projectile` [class](/docs/projectile-module/projectile/overview)
+that will cover most cases unless your implementation requires to customize
+the root component of this actor. So if you choose to use this class be mindful
+about the required setup explained below.
+:::
+
+## Mandatory Setup
+
+Ensure that you swap out the `Component Class` in the `ProjectileRoot` property
+with a subclass of `UPrimitiveComponent`.
+
+### Swap out component in C++
+- Use the `ObjectInitializer` of the constructor.
+- See `AGR Projectile` for an example.
+
+### Swap out component in Blueprints
+- Open your child blueprint of `AGR Projectile Base` and select the component
+called `ProjectileRoot`<Step text="1"/>.
+- In the details panel, change the `Component Class`<Step text="2"/>.
+
+![Projectile Base Change Root](_static/img/projectile-base/projectile-base-change-root.png)
+
+:::note
+Only C++ subclasses are supported.
+:::
