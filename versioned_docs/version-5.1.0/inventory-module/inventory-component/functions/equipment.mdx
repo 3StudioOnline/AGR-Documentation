@@ -1,0 +1,30 @@
+---
+sidebar_position: 2
+title: Equipment
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Get All Equipped Items
+
+`Get All Equipped Items` gets all equipped items in this inventory.
+
+![Get All Equipped Items](_static/img/equipment/get-all-equipped-items.png)
+
+## Get Item in Slot
+
+`Get Item in Slot` gets the item equipped in the given slot if available.
+* `Slot` <Step text="1"/> : The slot from which to potentially get an equipped item.
+
+![Get Item in Slot](_static/img/equipment/get-item-in-slot.png)
+
+Returns item equipped in slot if found. Otherwise, null.
+
+## Is Item Equipped
+
+`Is Item Equipped` checks if this item is equipped in this inventory in one or more slots.
+* `Item` <Step text="1"/> : Item to check for being equipped.
+
+![Is Item Equipped](_static/img/equipment/is-item-equipped.png)
+
+If item is equipped, value `Equipment Slots` <Step text="2"/> will hold slots in which this item was found equipped.

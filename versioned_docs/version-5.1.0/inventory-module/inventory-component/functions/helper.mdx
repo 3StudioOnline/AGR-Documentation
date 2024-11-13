@@ -1,0 +1,90 @@
+---
+sidebar_position: 4
+title: Helper
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Add Item to Slot
+
+`Add Item to Slot` adds the item to specified slot.
+* `Item` <Step text="1"/> : Item to add to slot.
+* `Slot` <Step text="2"/> : Slot to which add item.
+
+![Add Item to Slot](_static/img/helper/add-item-to-slot.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Remove Item from Slot
+
+`Remove Item from Slot` removes an item from the specified slot.
+* `Slot` <Step text="1"/> : Slot from which to remove an item.
+
+![Remove Item from Slot](_static/img/helper/remove-item-from-slot.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Slot Exists
+
+`Slot Exists` checks is the specified slot exists.
+* `Slot` <Step text="1"/> : Slot to check if it exists.
+
+![Slot Exists](_static/img/helper/slot-exists.png)
+
+Returns true if slot exists, otherwise false.
+
+## Is Item in Inventory
+
+`Is Item in Inventory` checks if the specified item is in this inventory.
+* `Item` <Step text="1"/> : Item to check for if it is in this inventory.
+
+![Is Item in Inventory](_static/img/helper/is-item-in-inventory.png)
+
+Returns true if item is in this inventory. Otherwise, false.
+
+## Calculate Drop Transform
+
+`Calculate Drop Transform` calculates a transform for where to drop the item from this inventory.
+* `Item` <Step text="1"/> : Item to drop.
+* `Distance` <Step text="2"/> : The distance from the instigator that the item will be dropped to.
+
+![Calculate Drop Transform](_static/img/helper/calculate-drop-transform.png)
+
+Returns transform for where to drop the item.
+
+## Count All Stacks
+
+`Count All Stacks` counts total number of specified items in the inventory.
+* `Items` <Step text="1"/> : Items of which to count total amount of stacks for.
+
+![Count All Stacks](_static/img/helper/count-all-stacks.png)
+
+Returns total amount stacks for the specified items in the inventory.
+
+## Add Stacks
+
+`Add Stacks` adds new stacks to this inventory of specified item class.
+* `Item Class` <Step text="1"/> : Class of the items to add.
+* `Stacks` <Step text="2"/> : Amount of items to add.
+
+![Add Stacks](_static/img/helper/add-stacks.png)
+
+:::note
+This function should only be called with authority.
+:::
+
+## Remove Stacks
+
+`Remove Stacks` remove specified number of stacked items from this inventory.
+* `Items` <Step text="1"/> : Arrays of items from which to remove.
+* `Stacks` <Step text="2"/> : Number of items to remove from stacks.
+
+![Remove Stacks](_static/img/helper/remove-stacks.png)
+
+:::note
+This function should only be called with authority.
+:::
