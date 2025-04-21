@@ -2,6 +2,28 @@ import {UE} from '@site/src/lib/utils.mdx'
 
 # Changelog
 
+### 5.3.1 - [2025-xx-xx]
+- Fixed
+    - Combat Module
+        - Only blocking hits will be broadcast in events
+        - Added missing execution pins to Blueprint node `EndTracingById()`
+        - Tracer components will no longer crash when start/end tracing in different situations
+        - `AGR_ArcTracerComponent` was not always broadcasting events when a trace ended
+
+### 5.3.0 - [2025-02-13]
+- Added
+    - New Combat Module
+    - Inventory Module
+        - `AGR_ItemComponent`: New event `OnStackCountUpdated`
+- Changed
+    - Animation Module
+        - `AGR_LocomotionComponent`: Defaults to no longer auto activate
+        - Moved config properties for bone rotation
+            - Removed properties `RootBoneDefault` and `RootName` from `AGR_AnimInstance`
+            - Added property `BoneRotation` to `AGR_AnimNode_Rotation`
+    - Projectile Module
+        - `AGR_ProjectileSphereComponent`: Defaults to simple collision checks during movement
+
 ### 5.2.0 - [2024-11-15]
 - Added
     - Support for Unreal Engine 5.5
