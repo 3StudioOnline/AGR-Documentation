@@ -1,0 +1,57 @@
+---
+sidebar_position: 5
+title: Types
+---
+import {Step, Highlight} from '@site/src/lib/utils.mdx'
+
+## Enums
+
+### Trace Mode
+`Trace Mode` enum value determines how trace points are used for performing
+trace operations.
+
+Values:
+* `Raycast`: Trace along each arc segment from start to end.
+* `Sweep`: Trace between the current and previous points on the segment, as if sweeping through the arc.
+
+### Trace Shape
+`Trace Shape` enum value specifies the geometric shape used during the trace operation.
+
+Values:
+* `Line`
+* `Box`
+* `Sphere`
+
+### Trace Hit Mode
+`Trace Hit Mode` enum value specifies whether the AGR tracer component should detect a single hit or multiple hits.
+
+Values:
+* `Single Hit`
+* `Multiple Hits`
+
+### Tracer Update Type
+`Tracer Update type` enum value specifies the state transitions of an AGR tracer component during its lifecycle.
+
+Values:
+* `Registered`
+* `Unregistered`
+* `Started`
+* `Ended`
+
+## Structs
+
+### Trace Params
+`Trace Params` struct holds parameters for trace operations used by the AGR tracer components.
+
+Values:
+* `Trace Channel`: The trace channel to use for the trace (e.g., camera, visibility, etc.).
+* `Trace Complex`: Whether to trace complex geometry (true) or simple collision shapes (false).
+* `Ignore Self`: Whether to ignore the actor initiating the trace.
+* `Draw Debug Type`: Type of debug visualization for the trace.
+* `Draw Time`: Duration for which debug visuals should persist (in seconds).
+* `Single Frame Trace Color`: Color used for single frame trace debug visuals.
+* `Multi Frame Trace Color`: Color used for multi frame trace debug visuals.
+* `Trace Hit Color`: Color used for debug visuals when a trace hits an actor.
+
+
+

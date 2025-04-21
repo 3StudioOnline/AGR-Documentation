@@ -1,0 +1,24 @@
+---
+sidebar_position: 2
+title: Functions
+---
+
+import {Step} from '@site/src/lib/utils.mdx'
+
+## Register / Unregister
+* `Register Tracer Component` : Registers a tracer component using a `Gameplay Tag`. If the tag is already registered, the tracer will be updated.
+* `Unregister Tracer By Component` : Unregisters a tracer using a direct reference.
+* `Unregister Tracer By Id` : Unregisters a tracer by its `Gameplay Tag`.
+
+### Start / End Tracing
+* `Start Tracing By Id` : Starts tracing on a registered tracer using its `Gameplay Tag`.
+* `End Tracing By Id` : Ends tracing on a registered tracer.
+
+### Utilities
+* `Clear Tracers` : Clears all registered tracers and notifies listeners via `OnTracerUpdated`.
+* `Build Ignore List` : Returns a list of actors that should be ignored during trace (owner, instigator, attachments).
+* `Get Ignore List` : Retrieves the current list of ignored actors from the trace params.
+* `Get Segment Count` : Returns the current `Segment Count` value.
+* `Get Trace Params` : Returns the internal `Trace Params` object.
+
+
