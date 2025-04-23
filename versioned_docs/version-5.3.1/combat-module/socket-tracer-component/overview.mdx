@@ -55,13 +55,13 @@ Triggered for every hit during tracing.
 ![On Hit](_static/img/overview/on-hit.png)
 
 ### On Unique Hit
-Triggered for unique actor hits (i.e., one per actor per trace cycle).
+Triggered only for unique actor hits per trace cycle.
 * `Hit Result` <Step text="1"/> : Data about the unique hit.
 
 ![On Unique Hit](_static/img/overview/on-unique-hit.png)
 
 :::note
-A hit is considered unique if the same actor has not already been hit during this trace cycle.
+A unique hit means the same actor is only counted once during a trace cycle.
 :::
 
 
